@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>郑州蓝予星河生物科技有限公司</title>
+<style>
+  :root{
+    --ink:#12203c;
+    --ink-soft:#4b5b78;
+    --blue:#1d4ed8;
+    --blue-deep:#0f2f8f;
+    --paper:#f6f7fb;
+    --card:#ffffff;
+    --line:#e3e6ef;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:"PingFang SC","Microsoft YaHei","Helvetica Neue",Arial,sans-serif;
+    color:var(--ink);
+    background:var(--paper);
+    line-height:1.7;
+  }
+  a{color:inherit;text-decoration:none;}
+
+  /* ---- nav ---- */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(246,247,251,.86);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{
+    max-width:1080px;margin:0 auto;padding:16px 24px;
+    display:flex;align-items:center;justify-content:space-between;
+  }
+  .brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:16px;letter-spacing:.5px;}
+  .brand .mark{
+    width:30px;height:30px;border-radius:8px;
+    background:linear-gradient(135deg,var(--blue),var(--blue-deep));
+    display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px;font-weight:800;
+  }
+  nav ul{display:flex;gap:28px;list-style:none;margin:0;padding:0;font-size:14px;color:var(--ink-soft);}
+  nav ul li a:hover{color:var(--blue);}
+
+  /* ---- hero ---- */
+  .hero{
+    max-width:1080px;margin:0 auto;padding:88px 24px 64px;
+    display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center;
+  }
+  .eyebrow{
+    display:inline-block;font-size:12px;letter-spacing:2px;color:var(--blue);
+    border:1px solid #c7d5fb;background:#eef2ff;border-radius:100px;padding:5px 14px;margin-bottom:20px;
+  }
+  h1{font-size:38px;line-height:1.35;margin:0 0 18px;letter-spacing:.5px;}
+  h1 .accent{color:var(--blue);}
+  .lede{color:var(--ink-soft);font-size:16px;max-width:520px;margin:0 0 28px;}
+  .stat-row{display:flex;gap:28px;flex-wrap:wrap;}
+  .stat{border-left:3px solid var(--blue);padding-left:14px;}
+  .stat b{display:block;font-size:22px;color:var(--ink);}
+  .stat span{font-size:13px;color:var(--ink-soft);}
+  .hero-panel{
+    background:var(--card);border:1px solid var(--line);border-radius:20px;
+    padding:28px;box-shadow:0 20px 40px -20px rgba(18,32,60,.15);
+  }
+  .hero-panel h3{margin:0 0 14px;font-size:15px;color:var(--ink-soft);font-weight:600;}
+  .tag-cloud{display:flex;flex-wrap:wrap;gap:8px;}
+  .tag-cloud span{
+    background:#eef2ff;color:var(--blue-deep);font-size:13px;padding:6px 12px;border-radius:100px;
+  }
+
+  section{max-width:1080px;margin:0 auto;padding:56px 24px;}
+  .section-head{margin-bottom:32px;}
+  .section-head .eyebrow{margin-bottom:10px;}
+  .section-head h2{font-size:26px;margin:0;}
+  .section-head p{color:var(--ink-soft);margin:10px 0 0;max-width:640px;}
+
+  .card{
+    background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px;
+  }
+  .about-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;}
+  .about-grid .card h4{margin:0 0 8px;font-size:16px;}
+  .about-grid .card p{margin:0;color:var(--ink-soft);font-size:14px;}
+  .about-body{margin-top:28px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:28px;color:var(--ink-soft);font-size:15px;}
+  .about-body strong{color:var(--ink);}
+
+  .timeline{position:relative;padding-left:20px;border-left:2px solid var(--line);margin-top:8px;}
+  .timeline p{color:var(--ink-soft);margin:0;}
+
+  .product-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+  .product-card{
+    background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .product-card:hover{transform:translateY(-4px);box-shadow:0 16px 30px -18px rgba(18,32,60,.25);}
+  .product-card .dot{width:8px;height:8px;border-radius:50%;background:var(--blue);margin-bottom:12px;}
+  .product-card h4{margin:0 0 6px;font-size:15px;}
+  .product-card p{margin:0;font-size:13px;color:var(--ink-soft);}
+
+  .biz-list{display:grid;gap:14px;}
+  .biz-list .card{display:flex;gap:16px;align-items:flex-start;}
+  .biz-list .num{font-weight:800;color:var(--blue);font-size:14px;min-width:28px;}
+  .biz-list p{margin:0;color:var(--ink-soft);font-size:14px;}
+  .biz-list h4{margin:0 0 4px;font-size:15px;}
+
+  footer{
+    border-top:1px solid var(--line);margin-top:40px;
+  }
+  .foot-inner{
+    max-width:1080px;margin:0 auto;padding:32px 24px;
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
+    color:var(--ink-soft);font-size:13px;
+  }
+
+  @media (max-width:820px){
+    .hero{grid-template-columns:1fr;}
+    .about-grid{grid-template-columns:1fr;}
+    .product-grid{grid-template-columns:repeat(2,1fr);}
+    nav ul{display:none;}
+    h1{font-size:30px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <div class="brand"><span class="mark">蓝</span> 郑州蓝予星河生物科技有限公司</div>
+    <nav>
+      <ul>
+        <li><a href="#about">公司简介</a></li>
+        <li><a href="#history">发展历程</a></li>
+        <li><a href="#products">产品业务</a></li>
+        <li><a href="#contact">联系我们</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div>
+    <span class="eyebrow">ZHENGZHOU LANYUXINGHE</span>
+    <h1>用数据说话，<span class="accent">用实力证明</span></h1>
+    <p class="lede">
+      我们是一家聚焦小家电、个护、清洁类家居产品的内容电商公司，依托抖音平台的流量生态与内容优势，
+      以「品牌整合 + 供应链直连 + 自研创新」为核心模式，为全球用户提供极具性价比的产品体验。
+    </p>
+    <div class="stat-row">
+      <div class="stat"><b>多品类</b><span>小家电 · 个护 · 清洁家居</span></div>
+      <div class="stat"><b>全链路</b><span>选品 · 供应链 · 营销 · 售后</span></div>
+      <div class="stat"><b>跨境布局</b><span>持续拓展海外电商渠道</span></div>
+    </div>
+  </div>
+  <div class="hero-panel">
+    <h3>核心能力</h3>
+    <div class="tag-cloud">
+      <span>品牌整合</span>
+      <span>供应链直连</span>
+      <span>自研创新</span>
+      <span>内容电商</span>
+      <span>精细化运营</span>
+      <span>跨境电商</span>
+    </div>
+  </div>
+</div>
+
+<section id="about">
+  <div class="section-head">
+    <span class="eyebrow">COMPANY PROFILE</span>
+    <h2>公司简介</h2>
+  </div>
+  <div class="about-grid">
+    <div class="card">
+      <h4>使命愿景</h4>
+      <p>致力成为国内一流的内容电商平台。</p>
+    </div>
+    <div class="card">
+      <h4>核心优势</h4>
+      <p>严选高品质产品，多电商渠道布局。</p>
+    </div>
+    <div class="card">
+      <h4>聚焦品类</h4>
+      <p>小家电类目、个护类、清洁类家居产品。</p>
+    </div>
+  </div>
+  <div class="about-body">
+    <p>蓝予星河基于郑州博寿商贸有限公司成功转型，主营业务聚焦<strong>小家电类目、个护类、清洁类</strong>产品，打造多品类电商渠道，为用户提供极具性价比的产品体验。</p>
+    <p>公司坐落于河南省郑州市，拥有大平层办公场地，核心团队专注电商全链路运营，凭借专业的精细化运营能力深耕行业。</p>
+    <p>我们以<strong>「品牌整合 + 供应链直连 + 自研创新」</strong>为核心模式，深度对接优质品牌与源头工厂，同时孵化具有市场差异化的自研产品。依托抖音平台的流量生态与内容优势，团队持续输出高质感原创视频内容，通过精准的场景化呈现与用户需求洞察，实现产品价值与内容传播的高效结合。</p>
+  </div>
+</section>
+
+<section id="history">
+  <div class="section-head">
+    <span class="eyebrow">DEVELOPMENT HISTORY</span>
+    <h2>发展历程</h2>
+    <p>我们走过的路 —— 全链路电商深耕至规模突破。</p>
+  </div>
+  <div class="timeline">
+    <div class="biz-list">
+      <div class="card"><div class="num">01</div><div><h4>筑基起步</h4><p>公司成立，由电视购物转型纯付费优质电商平台模式，持续专注开发新奇特产品，基于抖音兴趣电商，发展搜索电商多渠道布局。</p></div></div>
+      <div class="card"><div class="num">02</div><div><h4>体系搭建</h4><p>业务框架逐渐清晰，持续对新奇特产品进行市场验证与放量，精准定位高品质小家电类目、个护类、清洁类家居产品。</p></div></div>
+      <div class="card"><div class="num">03</div><div><h4>稳扎稳打</h4><p>全链路体系逐步成熟，打造多个高人气爆品，运营效率持续提升。</p></div></div>
+      <div class="card"><div class="num">04</div><div><h4>高速增长</h4><p>成熟合作项目稳步放量，自研产品凭借差异化优势快速渗透细分市场，数据驱动的运营体系全面落地。</p></div></div>
+      <div class="card"><div class="num">05</div><div><h4>成果显现</h4><p>在品牌合作、自研产品、供应链效率、内容转化等核心领域形成自有竞争力。</p></div></div>
+      <div class="card"><div class="num">06</div><div><h4>蓄势跃升</h4><p>深化品牌合作矩阵，通过「差异化选品 + 场景化内容 + 精细化运营」的组合策略，加大自研产品的研发投入。</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="products">
+  <div class="section-head">
+    <span class="eyebrow">CURRENT PRODUCT</span>
+    <h2>目前产品</h2>
+    <p>严选高品质产品，覆盖小家电、个护与清洁类家居场景。</p>
+  </div>
+  <div class="product-grid">
+    <div class="product-card"><div class="dot"></div><h4>荣事达食材净化机</h4><p>钛Ti · 食材净化 · 除菌去农残</p></div>
+    <div class="product-card"><div class="dot"></div><h4>蓝宝食材净化机</h4><p>除菌 · 除农残 · 降解重金属</p></div>
+    <div class="product-card"><div class="dot"></div><h4>蓝宝蒸汽清洁机</h4><p>蒸汽深度清洁 · 高效除菌除螨</p></div>
+    <div class="product-card"><div class="dot"></div><h4>爱柚冰箱除味器</h4><p>科学臭氧杀菌 · 快速除臭</p></div>
+    <div class="product-card"><div class="dot"></div><h4>钻石电动磨刀器</h4><p>纯铜电机 · 3秒磨刀 · 安全不伤手</p></div>
+    <div class="product-card"><div class="dot"></div><h4>科顺空气炸烤箱</h4><p>受热均匀 · 大容量 · 静电不锈钢</p></div>
+    <div class="product-card"><div class="dot"></div><h4>大宇料理棒</h4><p>一机多用 · 快速搅拌 · 8档调速</p></div>
+  </div>
+</section>
+
+<section id="business">
+  <div class="section-head">
+    <span class="eyebrow">BUSINESS OVERVIEW</span>
+    <h2>业务方向</h2>
+  </div>
+  <div class="about-body">
+    <p>公司深耕小家电、个护、清洁类家居产品赛道，通过差异化选品、场景化内容与精细化运营，持续孵化市场认可度高的产品，并积极拓展跨境电商业务，布局海外市场。目前已在东南亚等地区开展 TikTok Shop 跨境电商运营，依托统一的选品与供应链体系服务多个海外市场。</p>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="section-head">
+    <span class="eyebrow">CONTACT</span>
+    <h2>联系我们</h2>
+  </div>
+  <div class="card">
+    <p style="margin:0;color:var(--ink-soft);">郑州蓝予星河生物科技有限公司 · 河南省郑州市</p>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-inner">
+    <span>© 2026 郑州蓝予星河生物科技有限公司</span>
+    <span>Speak with data and prove with strength</span>
+  </div>
+</footer>
+
+</body>
+</html>
